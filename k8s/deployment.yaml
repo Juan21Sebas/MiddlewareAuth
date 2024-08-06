@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-login
+  template:
+    metadata:
+      labels:
+        app: auth-login
+        version: v2  
+    spec:
+      containers:
+      - name: app
+        image: ""
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        
